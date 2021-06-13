@@ -10,7 +10,8 @@ import {
   setCurrent,
   setGameStatus,
   setGameResult,
-  setNewTime
+  setNewTime,
+  setLevel
 } from '../../redux/reducers/gameReducer.js'
 
 const EndOfGame = () => {
@@ -27,6 +28,7 @@ const EndOfGame = () => {
   const rows = useSelector((s) => s.gameReducer.rows)
   const cols = useSelector((s) => s.gameReducer.columns)
   const rating = useSelector((s) => s.gameReducer.rating)
+  const level = useSelector((s) => s.gameReducer.level)
   const result = useSelector((s) => s.gameReducer.gameResult)
 
   const nextLevelOnClick = () => {
@@ -37,7 +39,7 @@ const EndOfGame = () => {
     dispatch(fillRandom())
     dispatch(setCurrent(-1))
     dispatch(gameplay())
-    // setLevel(level + 1)
+    dispatch(setLevel(level + 1))
   }
 
   const onChangePlayerName = (e) => {

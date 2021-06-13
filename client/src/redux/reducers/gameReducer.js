@@ -1,5 +1,4 @@
 /* eslint-disable import/no-anonymous-default-export */
-/* eslint-disable no-param-reassign */
 const FILL_FIELD = 'FILL_FIELD'
 const FILL_RANDOM = 'FILL_RANDOM'
 const SET_SQUARE = 'SET_SQUARE'
@@ -13,6 +12,7 @@ const SET_ROWS = 'SET_ROWS'
 const SET_NEW_TIME = 'SET_NEW_TIME'
 const TURN_HARDMODE = 'TURN_HARDMODE'
 const SET_RATING = 'SET_RATING'
+const SET_LEVEL = 'SET_LEVEL'
 
 const initialState = {
   field: [],
@@ -26,7 +26,8 @@ const initialState = {
   hardmode: -1,
   levelTime: 1000,
   gameResult: null,
-  rating: 0
+  rating: 0,
+  level: 1
 }
 
 export default (state = initialState, action) => {
@@ -107,6 +108,12 @@ export default (state = initialState, action) => {
       return {
         ...state,
         rating: action.newRating
+      }
+    }
+    case SET_LEVEL: {
+      return {
+        ...state,
+        level: action.newLevel
       }
     }
     default:
@@ -233,6 +240,12 @@ export function setRating(points, reset) {
 
     const newRating = reset ? 0 : Math.max(rating + points + hardmodePoints, 0)
     dispatch({ type: SET_RATING, newRating })
+  }
+}
+
+export function setLevel(num) {
+  return (dispatch) => {
+    dispatch({ type: SET_LEVEL, newLevel: num })
   }
 }
 

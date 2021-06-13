@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 
@@ -11,10 +11,9 @@ const GamePage = () => {
   const history = useHistory()
   const dispatch = useDispatch()
 
-  const [level, setLevel] = useState(1)
-
   const result = useSelector((s) => s.gameReducer.gameResult)
   const rating = useSelector((s) => s.gameReducer.rating)
+  const level = useSelector((s) => s.gameReducer.level)
 
   useEffect(() => dispatch(fillRandom()), [dispatch])
 
