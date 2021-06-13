@@ -1,19 +1,23 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
+import { setColumns, setRows } from '../../redux/reducers/gameReducer.js'
+
 const CustomSizePanel = () => {
   const dispatch = useDispatch()
   const [customButton, setCustomButton] = useState(-1)
+  const cols = useSelector((s) => s.gameReducer.columns)
+  const rows = useSelector((s) => s.gameReducer.rows)
 
   const onChangeX = (e) =>
     e.target.value <= 0
-  // ? dispatch(setColumns(null))
-  // : dispatch(setColumns(Math.min(e.target.value, 16)))
+      ? dispatch(setColumns(null))
+      : dispatch(setColumns(Math.min(e.target.value, 16)))
 
   const onChangeY = (e) =>
     e.target.value <= 0
-  // ? dispatch(setRows(null))
-  // : dispatch(setRows(Math.min(e.target.value, 9)))
+      ? dispatch(setRows(null))
+      : dispatch(setRows(Math.min(e.target.value, 9)))
 
   return (
     <>
@@ -29,8 +33,8 @@ const CustomSizePanel = () => {
           <div>
             <input
               type="number"
-              // value={cols}
-              className="form-input mt-1 block w-48 text-center font-semibold text-gray-700 focus:text-black rounded outline-none"
+              value={cols}
+              className="form-input mt-1 block w-48 text-center font-semibold text-gray-700 focus:text-black rounded"
               placeholder="COLS"
               onChange={onChangeX}
             />
@@ -38,8 +42,8 @@ const CustomSizePanel = () => {
           <div>
             <input
               type="number"
-              // value={rows}
-              className="form-input mt-1 block w-48 text-center font-semibold text-gray-700 focus:text-black rounded outline-none"
+              value={rows}
+              className="form-input mt-1 block w-48 text-center font-semibold text-gray-700 focus:text-black rounded"
               placeholder="ROWS"
               onChange={onChangeY}
             />

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from "react-router-dom"
 
@@ -6,17 +6,7 @@ import HardmodeButton from './common/HardmodeButton.js'
 import PlayButton from './common/PlayButton.js'
 import CustomSizePanel from './common/CustomSizePanel.js'
 
-// import {
-//   fillField,
-//   setGameStatus,
-//   setGameResult,
-//   setCurrent,
-//   setColumns,
-//   setRows,
-//   turnHardmode,
-//   setNewTime,
-//   setRating
-// } from '../redux/reducers/gameReducer'
+import { fillField, setGameStatus, setColumns, setRows } from '../redux/reducers/gameReducer.js'
 
 const MainMenu = () => {
   const history = useHistory()
@@ -24,25 +14,25 @@ const MainMenu = () => {
 
   const menuButtonStyle = "mb-1.5 transition duration-300 ease-in-out bg-purple-700 hover:bg-purple-900 text-white font-semibold py-2 w-48 mr-1 rounded"
 
-  // const cols = useSelector((s) => s.gameReducer.columns)
-  // const rows = useSelector((s) => s.gameReducer.rows)
+  const cols = useSelector((s) => s.gameReducer.columns)
+  const rows = useSelector((s) => s.gameReducer.rows)
 
-  // useEffect(() => dispatch(fillField(cols * rows)), [dispatch, cols, rows])
-  // useEffect(() => dispatch(setGameStatus('finish')), [dispatch])
+  useEffect(() => dispatch(fillField(cols * rows)), [dispatch, cols, rows])
+  useEffect(() => dispatch(setGameStatus('finish')), [dispatch])
 
   const fieldSizeButtonsClick = (size) => {
-    // if (size === 's') {
-    //   dispatch(setColumns(5))
-    //   dispatch(setRows(5))
-    // }
-    // if (size === 'm') {
-    //   dispatch(setColumns(7))
-    //   dispatch(setRows(7))
-    // }
-    // if (size === 'b') {
-    //   dispatch(setColumns(9))
-    //   dispatch(setRows(9))
-    // }
+    if (size === 's') {
+      dispatch(setColumns(5))
+      dispatch(setRows(5))
+    }
+    if (size === 'm') {
+      dispatch(setColumns(7))
+      dispatch(setRows(7))
+    }
+    if (size === 'b') {
+      dispatch(setColumns(9))
+      dispatch(setRows(9))
+    }
   }
 
   return (
