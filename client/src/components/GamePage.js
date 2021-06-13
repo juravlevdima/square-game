@@ -42,7 +42,7 @@ const GamePage = () => {
           MENU
         </button>
         <div className="text-black font-bold">Level: {level}</div>
-        <div className="text-black font-bold">Score: {rating.toFixed(2)}</div>
+        <div className="text-black font-bold">Score: {Math.trunc(rating * 100)}</div>
       </div>
     </div>
   )
