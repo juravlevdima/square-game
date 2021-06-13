@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:focus,:active{outline: none;}
+input::-ms-clear{display: none;}
+button, button:active {outline: none !important;}
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {-webkit-appearance: none; margin: 0;}
+input[type='number'] {-moz-appearance:textfield;}
+
+button::-moz-focus-inner { 
+  border: 0;
+  padding: 0;
+}
+
+/* body {
+  background-image: url('../../assets/images/bg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+} */
+
+.custom-shadow-style{
+  box-shadow: 0px 7px 10px 8px rgba(0,0,0,0.5);
+}

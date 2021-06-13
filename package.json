@@ -1,5 +1,5 @@
 {
-  "name": "express-cra-redux-boilerplate",
+  "name": "square-game",
   "version": "1.0.0",
   "main": "server.js",
   "type": "module",

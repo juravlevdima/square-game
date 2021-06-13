@@ -1,11 +1,11 @@
 import { Switch, Route, Redirect } from 'react-router-dom'
 
-import Main from './components/Main.js'
+import MainMenu from './components/MainMenu.js'
 
 function App() {
   return (
     <Switch>
-      <Route exact path="/" component={() => <Main />} />
+      <Route exact path="/" component={() => <MainMenu />} />
       <Redirect to="/" />
     </Switch>
   )
