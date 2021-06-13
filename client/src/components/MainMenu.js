@@ -21,31 +21,21 @@ const MainMenu = () => {
   useEffect(() => dispatch(setGameStatus('finish')), [dispatch])
 
   const fieldSizeButtonsClick = (size) => {
-    if (size === 's') {
-      dispatch(setColumns(5))
-      dispatch(setRows(5))
-    }
-    if (size === 'm') {
-      dispatch(setColumns(7))
-      dispatch(setRows(7))
-    }
-    if (size === 'b') {
-      dispatch(setColumns(9))
-      dispatch(setRows(9))
-    }
+    dispatch(setColumns(size))
+    dispatch(setRows(size))
   }
 
   return (
     <div>
       <div className="flex items-center justify-center h-screen">
         <div className="relative flex flex-col items-center w-72 h-96 bg-transparent text-black rounded-lg border-4 border-purple-500 custom-shadow-style pt-4 px-10">
-          <button type="button" className={menuButtonStyle} onClick={() => fieldSizeButtonsClick('s')}>
+          <button type="button" className={menuButtonStyle} onClick={() => fieldSizeButtonsClick(5)}>
             Small
           </button>
-          <button type="button" className={menuButtonStyle} onClick={() => fieldSizeButtonsClick('m')}>
+          <button type="button" className={menuButtonStyle} onClick={() => fieldSizeButtonsClick(7)}>
             Medium
           </button>
-          <button type="button" className={menuButtonStyle} onClick={() => fieldSizeButtonsClick('b')} >
+          <button type="button" className={menuButtonStyle} onClick={() => fieldSizeButtonsClick(9)}>
             Big
           </button>
           <CustomSizePanel />
