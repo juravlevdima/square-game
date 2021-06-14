@@ -11,7 +11,6 @@ const CustomSizePanel = () => {
 
   const onChangeX = (e) => {
     const max = Math.trunc(window?.innerWidth / 85) || 16
-    console.log(window.innerWidth)
     e.target.value <= 0
       ? dispatch(setColumns(null))
       : dispatch(setColumns(Math.min(e.target.value, max)))
