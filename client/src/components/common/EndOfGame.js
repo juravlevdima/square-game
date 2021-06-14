@@ -12,7 +12,7 @@ import {
   setGameResult,
   setNewTime,
   setLevel
-} from '../../redux/reducers/gameReducer.js'
+} from '../../redux/actions/gameActions.js'
 
 const EndOfGame = () => {
   const history = useHistory()

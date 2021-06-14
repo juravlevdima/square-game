@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
-import { setColumns, setRows } from '../../redux/reducers/gameReducer.js'
+import { setColumns, setRows } from '../../redux/actions/gameActions.js'
 
 const CustomSizePanel = () => {
   const dispatch = useDispatch()

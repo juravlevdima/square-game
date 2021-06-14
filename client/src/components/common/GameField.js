@@ -8,7 +8,7 @@ import {
   wrongCounterAdd,
   updateRandom,
   setRating
-} from '../../redux/reducers/gameReducer.js'
+} from '../../redux/actions/gameActions.js'
 
 const GameField = () => {
   const dispatch = useDispatch()

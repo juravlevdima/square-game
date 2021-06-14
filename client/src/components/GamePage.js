@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom'
 import EndOfGame from './common/EndOfGame.js'
 import GameField from './common/GameField.js'
 
-import { fillRandom, gameplay } from '../redux/reducers/gameReducer.js'
+import { fillRandom, gameplay } from '../redux/actions/gameActions.js'
 
 const GamePage = () => {
   const history = useHistory()

@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 
-import { setGameStatus, setGameResult, setCurrent, setNewTime, setRating, setLevel } from '../../redux/reducers/gameReducer.js'
+import { setGameStatus, setGameResult, setCurrent, setNewTime, setRating, setLevel } from '../../redux/actions/gameActions.js'
 
 const PlayButton = () => {
   const history = useHistory()

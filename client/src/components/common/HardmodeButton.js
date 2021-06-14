@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
-import { turnHardmode } from '../../redux/reducers/gameReducer.js'
+import { turnHardmode } from '../../redux/actions/gameActions.js'
 
 const HardmodeButton = () => {
   const dispatch = useDispatch()

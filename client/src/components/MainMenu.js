@@ -6,7 +6,7 @@ import HardmodeButton from './common/HardmodeButton.js'
 import PlayButton from './common/PlayButton.js'
 import CustomSizePanel from './common/CustomSizePanel.js'
 
-import { fillField, setGameStatus, setColumns, setRows } from '../redux/reducers/gameReducer.js'
+import { fillField, setGameStatus, setColumns, setRows } from '../redux/actions/gameActions.js'
 
 const MainMenu = () => {
   const history = useHistory()
