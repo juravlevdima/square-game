@@ -8,7 +8,7 @@ import {
   fillRandom,
   gameplay,
   setCurrent,
-  setGameStatus,
+  setGameStatusFinish,
   setGameResult,
   setNewTime,
   setLevel
@@ -33,7 +33,7 @@ const EndOfGame = () => {
 
   const nextLevelOnClick = () => {
     dispatch(fillField(cols * rows))
-    dispatch(setGameStatus('start'))
+    dispatch(setGameStatusFinish(false))
     dispatch(setGameResult(null))
     dispatch(setNewTime())
     dispatch(fillRandom())

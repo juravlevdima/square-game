@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 
-import { setGameStatus, setGameResult, setCurrent, setNewTime, setRating, setLevel } from '../../redux/actions/gameActions.js'
+import { setGameStatusFinish, setGameResult, setCurrent, setNewTime, setRating, setLevel } from '../../redux/actions/gameActions.js'
 
 const PlayButton = () => {
   const history = useHistory()
@@ -16,7 +16,7 @@ const PlayButton = () => {
       : 'bg-gray-300 text-gray-500 cursor-not-allowed'
 
   const playOnClick = () => {
-    dispatch(setGameStatus('start'))
+    dispatch(setGameStatusFinish(false))
     dispatch(setGameResult(null))
     dispatch(setCurrent(-1))
     dispatch(setNewTime(1))

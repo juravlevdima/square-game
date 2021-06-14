@@ -50,7 +50,7 @@ export function setSquare(idx, status) {
   }
 }
 
-export function setGameStatus(status) {
+export function setGameStatusFinish(status) {
   return (dispatch) => {
     dispatch({ type: t.SET_GAME_STATUS, status })
   }
@@ -128,13 +128,13 @@ export function setLevel(num) {
   }
 }
 
-export function gameplay(i = 0, time) {
+export function gameplay(squareIndex = 0, time) {
   return (dispatch, getState) => {
     const store = getState()
     const {
       field,
       randomOrder,
-      gameStatus,
+      gameIsFinish,
       current,
       wrongCounter,
       rightCounter,
@@ -147,16 +147,16 @@ export function gameplay(i = 0, time) {
     const { length } = field
 
     if (wrongCounter >= length / 2 || rightCounter >= length / 2) {
-      dispatch(setGameStatus('finish'))
+      dispatch(setGameStatusFinish(true))
     }
 
-    if (gameStatus !== 'finish') {
-      dispatch(setSquare(randomOrder[i], 1))
-      if (i) {
+    if (!gameIsFinish) {
+      dispatch(setSquare(randomOrder[squareIndex], 1))
+      if (squareIndex) {
         if (current === -1) {
           dispatch(wrongCounterAdd())
           dispatch(setRating(-0.5))
-          dispatch(setSquare(randomOrder[i - 1], current))
+          dispatch(setSquare(randomOrder[squareIndex - 1], current))
         }
         dispatch(setCurrent(-1))
       }
@@ -171,11 +171,11 @@ export function gameplay(i = 0, time) {
         if (newTime > levelTime) newTime = levelTime
       }
 
-      setTimeout(() => dispatch(gameplay(i + 1, newTime)), time)
-      if (i >= length) dispatch(setGameStatus('finish'))
+      setTimeout(() => dispatch(gameplay(squareIndex + 1, newTime)), time)
+      if (squareIndex >= length) dispatch(setGameStatusFinish(true))
     }
 
-    if (gameStatus === 'finish') {
+    if (gameIsFinish) {
       dispatch(setGameResult(rightCounter > wrongCounter ? 'You Win!' : 'Game Over'))
       dispatch(wrongCounterAdd(0))
       dispatch(rightCounterAdd(0))

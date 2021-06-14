@@ -6,7 +6,7 @@ import HardmodeButton from './common/HardmodeButton.js'
 import PlayButton from './common/PlayButton.js'
 import CustomSizePanel from './common/CustomSizePanel.js'
 
-import { fillField, setGameStatus, setColumns, setRows } from '../redux/actions/gameActions.js'
+import { fillField, setGameStatusFinish, setColumns, setRows } from '../redux/actions/gameActions.js'
 
 const MainMenu = () => {
   const history = useHistory()
@@ -18,7 +18,7 @@ const MainMenu = () => {
   const rows = useSelector((s) => s.gameReducer.rows)
 
   useEffect(() => dispatch(fillField(cols * rows)), [dispatch, cols, rows])
-  useEffect(() => dispatch(setGameStatus('finish')), [dispatch])
+  useEffect(() => dispatch(setGameStatusFinish(true)), [dispatch])
 
   const fieldSizeButtonsClick = (size) => {
     dispatch(setColumns(size))

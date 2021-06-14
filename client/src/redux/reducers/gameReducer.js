@@ -6,7 +6,7 @@ const initialState = {
   randomOrder: [],
   columns: null,
   rows: null,
-  gameStatus: 'finish',
+  gameIsFinish: true,
   rightCounter: 0,
   wrongCounter: 0,
   current: -1,
@@ -47,7 +47,7 @@ export default (state = initialState, action) => {
     case t.SET_GAME_STATUS:
       return {
         ...state,
-        gameStatus: action.status
+        gameIsFinish: action.status
       }
     case t.SET_CURRENT:
       return {
