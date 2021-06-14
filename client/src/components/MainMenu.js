@@ -12,7 +12,12 @@ const MainMenu = () => {
   const history = useHistory()
   const dispatch = useDispatch()
 
-  const menuButtonStyle = "mb-1.5 transition duration-300 ease-in-out bg-purple-700 hover:bg-purple-900 text-white font-semibold py-2 w-48 mr-1 rounded"
+  const mediumButtonDisabled = window?.innerWidth ? window?.innerWidth <= 600 : false
+  const mediumButtonBackground = mediumButtonDisabled ? 'invisible' : 'visible'
+  const bigButtonDisabled = window?.innerWidth ? window?.innerWidth <= 770 : false
+  const bigButtonBackground = bigButtonDisabled ? 'invisible' : 'visible'
+
+  const menuButtonStyle = 'mb-1.5 transition duration-300 ease-in-out font-semibold py-2 w-48 mr-1 rounded bg-purple-600 focus:text-black hover:bg-purple-900 text-white'
 
   const cols = useSelector((s) => s.gameReducer.columns)
   const rows = useSelector((s) => s.gameReducer.rows)
@@ -32,10 +37,20 @@ const MainMenu = () => {
           <button type="button" className={menuButtonStyle} onClick={() => fieldSizeButtonsClick(5)}>
             Small
           </button>
-          <button type="button" className={menuButtonStyle} onClick={() => fieldSizeButtonsClick(7)}>
+          <button
+            disabled={mediumButtonDisabled}
+            type="button"
+            className={`${menuButtonStyle} ${mediumButtonBackground}`}
+            onClick={() => fieldSizeButtonsClick(7)}
+          >
             Medium
           </button>
-          <button type="button" className={menuButtonStyle} onClick={() => fieldSizeButtonsClick(9)}>
+          <button
+            disabled={bigButtonDisabled}
+            type="button"
+            className={`${menuButtonStyle} ${bigButtonBackground}`}
+            onClick={() => fieldSizeButtonsClick(9)}
+          >
             Big
           </button>
           <CustomSizePanel />
@@ -45,7 +60,7 @@ const MainMenu = () => {
       </div>
       <div className="absolute top-4 left-2">
         <button
-          className="transition duration-300 ease-in-out focus:outline-none focus:shadow-outline bg-purple-700 hover:bg-purple-900 text-white font-semibold py-2 w-24 mr-1 rounded"
+          className="transition duration-300 ease-in-out bg-purple-600 focus:text-black hover:bg-purple-900 text-white font-semibold py-2 w-24 mr-1 rounded"
           type="button"
           onClick={() => history.push('/rating')}
         >

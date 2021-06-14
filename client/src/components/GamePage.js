@@ -34,7 +34,7 @@ const GamePage = () => {
       </div>
       <div className="absolute top-4 left-2">
         <button
-          className="transition duration-300 ease-in-out bg-purple-700 hover:bg-purple-900 text-white font-semibold py-2 w-20 mr-1 rounded"
+          className="transition duration-300 ease-in-out bg-purple-600 focus:text-black hover:bg-purple-900 text-white font-semibold py-2 w-20 mr-1 rounded"
           type="button"
           onClick={menuButtonOnClick}
         >

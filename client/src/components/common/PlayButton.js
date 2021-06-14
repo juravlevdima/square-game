@@ -28,7 +28,7 @@ const PlayButton = () => {
   return (
     <button
       type="button"
-      className={`absolute bottom-2 left-auto transition duration-300 ease-in-out ${playButtonBackground} font-semibold py-2 w-48 mr-1 rounded`}
+      className={`absolute bottom-2 left-auto transition duration-300 focus:text-black ease-in-out ${playButtonBackground} font-semibold py-2 w-48 mr-1 rounded`}
       onClick={playOnClick}
       disabled={!(cols && rows)}
     >

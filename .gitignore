@@ -16,3 +16,5 @@ yarn-error.log*
 lerna-debug.log*
 
 build
+
+/client/src/css/index.css

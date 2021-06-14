@@ -48,7 +48,7 @@ const GameField = () => {
           <button
             disabled={buttonDisabbled}
             type="button"
-            className={`flex items-center justify-center border border-black ${SQUARE_SIZE} m-1 hover:text-red-500 ${color}`}
+            className={`flex items-center justify-center border border-black ${SQUARE_SIZE} m-1 ${color}`}
             key={idx}
             onClick={() => (it === 1 ? squareOnClick(idx) : graySquareOnClick(idx))}
           >
