@@ -10,7 +10,7 @@ const CustomSizePanel = () => {
   const rows = useSelector((s) => s.gameReducer.rows)
 
   const onChangeX = (e) => {
-    const max = Math.trunc(window?.innerWidth / 85) || 16
+    const max = Math.trunc(window?.innerWidth / 80) || 16
     e.target.value <= 0
       ? dispatch(setColumns(null))
       : dispatch(setColumns(Math.min(e.target.value, max)))

@@ -12,11 +12,6 @@ const MainMenu = () => {
   const history = useHistory()
   const dispatch = useDispatch()
 
-  const mediumButtonDisabled = window?.innerWidth ? window?.innerWidth <= 600 : false
-  const mediumButtonBackground = mediumButtonDisabled ? 'invisible' : 'visible'
-  const bigButtonDisabled = window?.innerWidth ? window?.innerWidth <= 770 : false
-  const bigButtonBackground = bigButtonDisabled ? 'invisible' : 'visible'
-
   const menuButtonStyle = 'mb-1.5 transition duration-300 ease-in-out font-semibold py-2 w-48 mr-1 rounded bg-purple-600 focus:text-black hover:bg-purple-900 text-white'
 
   const cols = useSelector((s) => s.gameReducer.columns)
@@ -38,17 +33,15 @@ const MainMenu = () => {
             Small
           </button>
           <button
-            disabled={mediumButtonDisabled}
             type="button"
-            className={`${menuButtonStyle} ${mediumButtonBackground}`}
+            className={`${menuButtonStyle} hidden sm:block`}
             onClick={() => fieldSizeButtonsClick(7)}
           >
             Medium
           </button>
           <button
-            disabled={bigButtonDisabled}
             type="button"
-            className={`${menuButtonStyle} ${bigButtonBackground}`}
+            className={`${menuButtonStyle} hidden md:block`}
             onClick={() => fieldSizeButtonsClick(9)}
           >
             Big

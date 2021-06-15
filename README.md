@@ -24,5 +24,5 @@ yarn run dev
 ### Start
 
 ```Shell
-yarn run start
+yarn run client:build && yarn run start
 ```
