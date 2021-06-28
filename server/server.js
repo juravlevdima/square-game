@@ -25,7 +25,7 @@ server.use(cors())
 
 server.use('/api/v1', ratingRoutes)
 
-if (process.env.NODE_ENV = 'production') {
+if (process.env.NODE_ENV === 'production') {
   server.use(express.static(path.resolve('client/build')))
   server.get('/*', (req, res) => {
     res.sendFile(path.resolve('client/build/index.html'))
