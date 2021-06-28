@@ -1,10 +1,17 @@
-## Includes:
-* Backend - Express
-* Frontend - Create React App
-* Redux
-* React Router
-* Axios
+# Square Game
+
+The project is hosted on Heroku: http://whack-a-square.herokuapp.com
+
+## Backend:
+* Node.js
+* Express.js
+* MongoDB/Mongoose
+
+## Frontend:
+* React
+* Redux/ReduxThunk
 * TailwindCSS
+* Axios
 
 ## In the project directory, you can run:
 
