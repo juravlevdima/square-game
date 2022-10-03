@@ -1,9 +1,7 @@
 import t from '../types/gameActionTypes.js'
 
 export function fillField(len) {
-  return (dispatch) => {
-    dispatch({ type: t.FILL_FIELD, field: Array(len).fill(0) })
-  }
+  return { type: t.FILL_FIELD, field: Array(len).fill(0) }
 }
 
 export function fillRandom() {
@@ -30,15 +28,11 @@ export function updateRandom(index) {
 }
 
 export function setColumns(number) {
-  return (dispatch) => {
-    dispatch({ type: t.SET_COLUMNS, number })
-  }
+  return { type: t.SET_COLUMNS, number }
 }
 
 export function setRows(number) {
-  return (dispatch) => {
-    dispatch({ type: t.SET_ROWS, number })
-  }
+  return { type: t.SET_ROWS, number }
 }
 
 export function setSquare(idx, status) {
@@ -51,15 +45,11 @@ export function setSquare(idx, status) {
 }
 
 export function setGameStatusFinish(status) {
-  return (dispatch) => {
-    dispatch({ type: t.SET_GAME_STATUS, status })
-  }
+  return { type: t.SET_GAME_STATUS, status }
 }
 
 export function setCurrent(stat) {
-  return (dispatch) => {
-    dispatch({ type: t.SET_CURRENT, current: stat })
-  }
+  return { type: t.SET_CURRENT, current: stat }
 }
 
 export function wrongCounterAdd(number = 1) {
@@ -87,9 +77,7 @@ export function rightCounterAdd(number = 1) {
 }
 
 export function setGameResult(result) {
-  return (dispatch) => {
-    dispatch({ type: t.SET_GAME_RESULT, result })
-  }
+  return { type: t.SET_GAME_RESULT, result }
 }
 
 export function turnHardmode() {
@@ -123,9 +111,7 @@ export function setRating(points, reset) {
 }
 
 export function setLevel(num) {
-  return (dispatch) => {
-    dispatch({ type: t.SET_LEVEL, newLevel: num })
-  }
+  return { type: t.SET_LEVEL, newLevel: num }
 }
 
 export function gameplay(squareIndex = 0, time) {

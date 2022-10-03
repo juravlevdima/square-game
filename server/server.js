@@ -2,23 +2,15 @@ import express from 'express'
 import dotenv from 'dotenv'
 import cors from 'cors'
 import path from 'path'
-import mongoose from 'mongoose'
 
 import ratingRoutes from './routes/ratingRoutes.js'
+import dbConnect from './services/mongoose.js'
 
 dotenv.config()
 const port = process.env.PORT || 8080
 const server = express()
 
-const mongooseOptions = {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false
-}
-mongoose.connect(process.env.MONGO_URL, mongooseOptions)
-  .then(() => console.log(`DB is successfully connected`))
-  .catch(() => console.log(`DB connect ERROR`))
+dbConnect()
 
 server.use(express.json())
 server.use(cors())
