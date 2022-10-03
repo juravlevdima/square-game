@@ -1,5 +1,5 @@
 require('dotenv').config({ path: `${process.cwd()}/../.env` })
-const createProxyMiddleware = require('http-proxy-middleware')
+const { createProxyMiddleware } = require('http-proxy-middleware')
 
 const port = process.env.PORT || 8080
 

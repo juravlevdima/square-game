@@ -1,6 +1,6 @@
 # Square Game
 
-The project is hosted on Heroku: http://whack-a-square.herokuapp.com
+The project is hosted on Heroku: https://whack-a-square.herokuapp.com
 
 ## Backend:
 * Node.js
@@ -17,6 +17,7 @@ The project is hosted on Heroku: http://whack-a-square.herokuapp.com
 
 ### Installation
 
+
 ```Shell
 yarn install && yarn run client:install
 ```
@@ -29,6 +30,7 @@ yarn run dev
 ```
 
 ### Start
+Create a env-variable MONGO_URL with your mongo uri, then:
 
 ```Shell
 yarn run client:build && yarn run start
