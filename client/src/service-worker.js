@@ -75,12 +75,13 @@ self.addEventListener('message', (event) => {
 registerRoute(
   ({ url }) => url.pathname.endsWith('/api/v1/rating'),
   new NetworkFirst({
-    networkTimeoutSeconds: 2,
+    networkTimeoutSeconds: 3,
     cacheName: 'ratings',
     plugins: [
       new CacheableResponsePlugin({
         statuses: [0, 200]
       })
     ]
-  })
+  }),
+  'GET'
 )
