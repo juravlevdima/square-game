@@ -3,7 +3,7 @@
   "short_name": "Whack a Square",
   "theme_color": "#fff",
   "background_color": "#fff",
-  "display": "fullscreen",
+  "display": "standalone",
   "orientation": "portrait",
   "start_url": ".",
   "icons": [

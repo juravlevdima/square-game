@@ -10,7 +10,7 @@ const PlayButton = () => {
   const cols = useSelector((s) => s.gameReducer.columns)
   const rows = useSelector((s) => s.gameReducer.rows)
 
-  const playButtonBackground = 
+  const playButtonBackground =
     cols && rows
       ? 'bg-green-700 hover:bg-green-900 text-white'
       : 'bg-gray-300 text-gray-500 cursor-not-allowed'
