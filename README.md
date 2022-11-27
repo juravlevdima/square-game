@@ -1,6 +1,6 @@
 # Square Game
 
-The project is hosted on Heroku: https://whack-a-square.herokuapp.com
+The project is hosted on Render.com: https://whack-a-square.onrender.com/
 
 ## Backend:
 * Node.js
